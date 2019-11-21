@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="d-flex justify-content-center">
+    <h1 class="m-4"><%= @cocktail.name.capitalize %>🍸</h1>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary m-4"%>
+  </div>
+
+  <div class="row">
+    <% @cocktail.doses.each do |dose| %>
+    <div class="col-6">
+      <div class="card-product border m-4 doses-list" style="height: 150px">
+        <div class="card-product-infos">
+          <h2><%= dose.ingredient.name %></h2>
+          <div class="d-flex justify-content-between">
+            <p><%= dose.description %></p>
+            <p><%= link_to "Delete Ingredient", cocktail_dose_path(@cocktail, dose), method: :delete, class: "btn btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
