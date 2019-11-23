@@ -1,11 +1,13 @@
+
 <div class="home-banner" style="background-image: linear-gradient(to bottom, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.2)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
   <h1 class="m-4"><%= @cocktail.name.capitalize %>🍸</h1>
 </div>
+<div class="container" style="height: 80%">
 
 <div class="container">
 
   <div class="d-flex justify-content-center">
-    <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary m-4"%>
+    <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary m-4 rounded "%>
   </div>
 
   <div class="row">
@@ -27,4 +29,5 @@
     <% end %>
   </div>
 
+</div>
 </div>
